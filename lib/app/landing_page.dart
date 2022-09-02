@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quran_khmer_online/app/home/home_page.dart';
-import 'package:quran_khmer_online/app/sign_in/sign_in_page.dart';
 import 'package:quran_khmer_online/services/auth.dart';
 import 'package:quran_khmer_online/services/database.dart';
 
