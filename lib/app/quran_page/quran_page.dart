@@ -27,73 +27,77 @@ class _QuranPageState extends State<QuranPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.grey.shade100,
+        appBar: AppBar(
+          title: Text("Quran"),
+          elevation: 0.5,
+        ),
         body: DefaultTabController(
           length: 2,
           child: NestedScrollView(
             headerSliverBuilder: (context, value) {
               return [
+                // SliverAppBar(
+                //   //toolbarHeight: 190.0,
+                //   backgroundColor: Colors.teal,
+                //   automaticallyImplyLeading: false,
+                //   title: Column(
+                //     crossAxisAlignment: CrossAxisAlignment.start,
+                //     children: [
+                //      Text(
+                //           'Quran',
+                //           style: TextStyle(
+                //             color: Colors.white
+                //           ),
+                //         ),
+                //       Container(
+                //         height: 120.0,
+                //         margin: EdgeInsets.only(top: 18.0),
+                //         padding: EdgeInsets.all(25.0),
+                //         alignment: Alignment.bottomLeft,
+                //         decoration: BoxDecoration(
+                //           color: Colors.grey.shade200,
+                //           borderRadius: BorderRadius.circular(10.0),
+                //           image: DecorationImage(
+                //             image: AssetImage("images/quran_bg.png"),
+                //             fit: BoxFit.cover,
+                //           ),
+                //         ),
+                //         child: Text(
+                //           "Suralar",
+                //           style: TextStyle(
+                //             color: Colors.white,
+                //             fontSize: 23.0,
+                //             fontWeight: FontWeight.w600,
+                //           ),
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
                 SliverAppBar(
-                  //toolbarHeight: 190.0,
-                  backgroundColor: Colors.teal,
-                  automaticallyImplyLeading: false,
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                     Text(
-                          'Quran',
-                          style: TextStyle(
-                            color: Colors.white
-                          ),
-                        ),
-                      // Container(
-                      //   height: 120.0,
-                      //   margin: EdgeInsets.only(top: 18.0),
-                      //   padding: EdgeInsets.all(25.0),
-                      //   alignment: Alignment.bottomLeft,
-                      //   decoration: BoxDecoration(
-                      //     color: Colors.grey.shade200,
-                      //     borderRadius: BorderRadius.circular(10.0),
-                      //     image: DecorationImage(
-                      //       image: AssetImage("images/quran_bg.png"),
-                      //       fit: BoxFit.cover,
-                      //     ),
-                      //   ),
-                      //   child: Text(
-                      //     "Suralar",
-                      //     style: TextStyle(
-                      //       color: Colors.white,
-                      //       fontSize: 23.0,
-                      //       fontWeight: FontWeight.w600,
-                      //     ),
-                      //   ),
-                      // ),
-                    ],
-                  ),
-                ),
-                SliverAppBar(
-                  toolbarHeight: 120.0,
+                  toolbarHeight: 150.0,
                   backgroundColor: Colors.transparent,
                   automaticallyImplyLeading: false,
                   title: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        height: 120.0,
-                        margin: EdgeInsets.only(top: 18.0),
+                        height: 130.0,
+                        margin: EdgeInsets.only(top: 15.0, bottom: 5.0),
                         padding: EdgeInsets.all(25.0),
                         alignment: Alignment.bottomLeft,
                         decoration: BoxDecoration(
                           color: Colors.grey.shade200,
                           borderRadius: BorderRadius.circular(10.0),
                           image: DecorationImage(
-                            image: AssetImage("images/quran_bg.png"),
+                            image: AssetImage("images/quran_bg2.png"),
                             fit: BoxFit.cover,
                           ),
                         ),
                         child: Text(
                           "Al-Quran",
                           style: TextStyle(
-                            color: Colors.teal,
+                            color: Colors.black54,
                             fontSize: 23.0,
                             fontWeight: FontWeight.w600,
                           ),
@@ -148,9 +152,11 @@ class _QuranPageState extends State<QuranPage> {
                           dragStartBehavior: DragStartBehavior.down,
                           isScrollable: true,
                           labelPadding: EdgeInsets.symmetric(horizontal: 20.0),
-                          labelColor: Color.fromRGBO(197, 162, 110, 1),
+                          //labelColor: Color.fromRGBO(197, 162, 110, 1),
+                          labelColor: Colors.teal,
                           unselectedLabelColor: Colors.grey.shade400,
-                          indicatorColor: Color.fromRGBO(197, 162, 110, 1),
+                          //indicatorColor: Color.fromRGBO(197, 162, 110, 1),
+                          indicatorColor: Colors.teal,
                           indicatorWeight: 3.0,
                           tabs: [
                             Tab(text: 'Surah'),

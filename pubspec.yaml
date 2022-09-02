@@ -76,6 +76,7 @@ flutter:
     - images/logo.png
     - images/background.png
     - images/quran_bg.jpg
+    - images/quran_bg2.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -100,5 +101,10 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  fonts:
+    - family: surah_family
+      fonts:
+        - asset: fonts/surah_font.otf
+          weight: 700
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

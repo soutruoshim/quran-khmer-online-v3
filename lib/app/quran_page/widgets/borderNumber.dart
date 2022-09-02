@@ -18,7 +18,7 @@ class _BorderNumberState extends State<BorderNumber> {
           width: 28,
           height: 28,
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.brown, width: 3),
+            border: Border.all(color: Colors.teal, width: 3),
           ),
         ),
         Transform.rotate(
@@ -27,7 +27,7 @@ class _BorderNumberState extends State<BorderNumber> {
             width: 28,
             height: 28,
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.brown, width: 3),
+              border: Border.all(color: Colors.teal, width: 3),
             ),
           ),
         ),

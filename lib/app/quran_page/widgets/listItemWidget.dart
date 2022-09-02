@@ -24,8 +24,10 @@ class _ListItemWidgetState extends State<ListItemWidget> {
       subtitle: Text("${widget.item.place} - ${widget.item.count} ayat"),
       trailing: Text(widget.item.translatedAr, style: TextStyle(
           fontWeight: FontWeight.w700,
-          color: Color.fromRGBO(163, 129, 80, 1),
-          fontSize: 20.0),
+          fontFamily: 'surah_family',
+          //color: Color.fromRGBO(163, 129, 80, 1),
+          color: Colors.teal,
+          fontSize: 40.0),
       ),
       onTap: (){
         //Navigator.of(context).push(MaterialPageRoute(builder: (context) => ItemshowPage(itemlar: widget.item,)));
