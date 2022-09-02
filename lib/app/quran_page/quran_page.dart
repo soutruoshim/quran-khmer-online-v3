@@ -25,8 +25,7 @@ class _QuranPageState extends State<QuranPage> {
   }
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
         backgroundColor: Colors.grey.shade100,
         body: DefaultTabController(
           length: 2,
@@ -34,19 +33,50 @@ class _QuranPageState extends State<QuranPage> {
             headerSliverBuilder: (context, value) {
               return [
                 SliverAppBar(
-                  toolbarHeight: 190.0,
+                  //toolbarHeight: 190.0,
+                  backgroundColor: Colors.teal,
+                  automaticallyImplyLeading: false,
+                  title: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                     Text(
+                          'Quran',
+                          style: TextStyle(
+                            color: Colors.white
+                          ),
+                        ),
+                      // Container(
+                      //   height: 120.0,
+                      //   margin: EdgeInsets.only(top: 18.0),
+                      //   padding: EdgeInsets.all(25.0),
+                      //   alignment: Alignment.bottomLeft,
+                      //   decoration: BoxDecoration(
+                      //     color: Colors.grey.shade200,
+                      //     borderRadius: BorderRadius.circular(10.0),
+                      //     image: DecorationImage(
+                      //       image: AssetImage("images/quran_bg.png"),
+                      //       fit: BoxFit.cover,
+                      //     ),
+                      //   ),
+                      //   child: Text(
+                      //     "Suralar",
+                      //     style: TextStyle(
+                      //       color: Colors.white,
+                      //       fontSize: 23.0,
+                      //       fontWeight: FontWeight.w600,
+                      //     ),
+                      //   ),
+                      // ),
+                    ],
+                  ),
+                ),
+                SliverAppBar(
+                  toolbarHeight: 120.0,
                   backgroundColor: Colors.transparent,
                   automaticallyImplyLeading: false,
                   title: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Quran Khmer',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
                       Container(
                         height: 120.0,
                         margin: EdgeInsets.only(top: 18.0),
@@ -56,14 +86,14 @@ class _QuranPageState extends State<QuranPage> {
                           color: Colors.grey.shade200,
                           borderRadius: BorderRadius.circular(10.0),
                           image: DecorationImage(
-                            image: AssetImage("assets/images/logo.png"),
+                            image: AssetImage("images/quran_bg.png"),
                             fit: BoxFit.cover,
                           ),
                         ),
                         child: Text(
-                          "Suralar",
+                          "Al-Quran",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.teal,
                             fontSize: 23.0,
                             fontWeight: FontWeight.w600,
                           ),
@@ -98,7 +128,7 @@ class _QuranPageState extends State<QuranPage> {
                           color: Colors.grey,
                           size: 18.0,
                         ),
-                        hintText: "Suralarni qidirish",
+                        hintText: "Search surah",
                         hintStyle: TextStyle(
                           color: Colors.grey,
                           fontSize: 15.0,
@@ -124,7 +154,7 @@ class _QuranPageState extends State<QuranPage> {
                           indicatorWeight: 3.0,
                           tabs: [
                             Tab(text: 'Surah'),
-                            Tab(text: 'Pora'),
+                            Tab(text: 'Juzuk'),
                           ],
                         ),
                       ),
@@ -141,8 +171,7 @@ class _QuranPageState extends State<QuranPage> {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
   Widget surahOffClass() {
     return ListView.builder(
