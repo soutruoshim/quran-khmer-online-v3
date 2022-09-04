@@ -204,6 +204,7 @@ class _QuranPageState extends State<QuranPage> {
               itemCount: items == null ? 0 : items.length,
               itemBuilder: (context, index) {
                 surahList.add(items[index]);
+                print(name);
                 if(name == ""){
                   return ListItemWidget(item: items[index]);
                 }else{

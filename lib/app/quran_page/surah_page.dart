@@ -39,11 +39,11 @@ class _SurahPageState extends State<SurahPage> {
               child: Container(
                 width: 40.0,
                 height: 40.0,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5.0),
-                  color: Colors.teal.shade300,
-                ),
+                alignment: Alignment.centerLeft,
+                // decoration: BoxDecoration(
+                //   borderRadius: BorderRadius.circular(5.0),
+                //   color: Colors.teal.shade300,
+                // ),
                 child: Icon(
                   CupertinoIcons.back,
                   color: Colors.white,
