@@ -128,8 +128,7 @@ class _SurahPageState extends State<SurahPage> {
                         width: 214.0,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage(
-                                "images/bismillah.png"),
+                            image: AssetImage(item.id != 9?"images/bismillah.png":"images/empty.png"),
                             fit: BoxFit.cover,
                           ),
                         ),
