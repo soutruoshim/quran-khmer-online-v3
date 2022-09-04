@@ -37,7 +37,7 @@ class _QuranPageState extends State<QuranPage> {
           elevation: 0.5,
         ),
         body: DefaultTabController(
-          length: 3,
+          length: 2,
           child: NestedScrollView(
             headerSliverBuilder: (context, value) {
               return [
@@ -169,8 +169,7 @@ class _QuranPageState extends State<QuranPage> {
                           indicatorWeight: 3.0,
                           tabs: [
                             Tab(text: 'Surah'),
-                            Tab(text: 'Juzuk'),
-                            Tab(text: 'Bookmark'),
+                            Tab(text: 'Bookmarks'),
                           ],
                         ),
                       ),
@@ -182,7 +181,6 @@ class _QuranPageState extends State<QuranPage> {
             body: TabBarView(
               children: [
                 chapters(name: searchText),
-                chapters(),
                 ayahBookmarks(),
               ],
             ),
