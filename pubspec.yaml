@@ -43,6 +43,8 @@ dependencies:
   image: ^3.0.2
   path_provider: ^2.0.2
   flutter_keyboard_visibility: ^5.0.0
+  flutter_share: ^2.0.0
+  sqflite: ^2.0.3+1
 
 dev_dependencies:
   flutter_test:
@@ -77,6 +79,10 @@ flutter:
     - images/background.png
     - images/quran_bg.jpg
     - images/quran_bg2.png
+    - images/bismillah.png
+    - images/vector.png
+    - jsonfile/chapter_list.json
+    - jsonfile/translate.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -106,5 +112,12 @@ flutter:
       fonts:
         - asset: fonts/surah_font.otf
           weight: 700
+    - family: khmeros
+      fonts:
+        - asset: fonts/KhmerOS.ttf
+    - family: osman
+      fonts:
+        - asset: fonts/UthmanicHafs.otf
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

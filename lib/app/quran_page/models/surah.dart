@@ -1,3 +1,7 @@
+// To parse this JSON data, do
+//
+//     final surah = surahFromJson(jsonString);
+
 import 'package:meta/meta.dart';
 import 'dart:convert';
 
@@ -17,9 +21,9 @@ class Surah {
     @required this.type,
   });
 
-  String id;
-  String bismillah;
-  String count;
+  int id;
+  bool bismillah;
+  int count;
   String name;
   String place;
   String translatedAr;
