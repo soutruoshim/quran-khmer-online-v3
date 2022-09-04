@@ -222,14 +222,14 @@ class _QuranPageState extends State<QuranPage> {
     );
   }
 
-  void _refreshBookmark() async {
+  Future _refreshBookmark() async {
     final data = await SQLHelper.getItems();
     setState(() {
       _bookmarkList = data;
       _isLoading = false;
     });
   }
-  Widget ayahBookmarks() {
+  Widget ayahBookmarks_temp() {
     return _isLoading
         ? const Center(
       child: CircularProgressIndicator(),
@@ -348,6 +348,135 @@ class _QuranPageState extends State<QuranPage> {
             SizedBox(height: 10.0),
           ],
         ),
+    );
+  }
+  Widget ayahBookmarks() {
+    return _isLoading
+        ? const Center(
+      child: CircularProgressIndicator(),
+    )
+        :
+    RefreshIndicator(
+      onRefresh: _refreshBookmark,
+      backgroundColor: Colors.teal,
+      color: Colors.white,
+      displacement: 200,
+      strokeWidth: 5,
+      child: ListView.builder(
+        physics: AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
+        padding: EdgeInsets.symmetric(horizontal: 10.0),
+        itemCount: _bookmarkList.length,
+        itemBuilder: (context, index) => Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    //color: Color.fromRGBO(163, 129, 80, 0.1),
+                    color: Color.fromRGBO(128, 203, 196, 0.1),
+
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.black,
+                        radius: 16.0,
+                        child: Text(
+                          "${_bookmarkList[index]['verseId']}",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          GestureDetector(
+                              onTap:()=> share(_bookmarkList[index]),
+                              child:Icon(Icons.share_outlined, color: Colors.grey,)
+                          ),
+                          SizedBox(width: 20.0),
+                          GestureDetector(
+                              onTap:()=> (){
+                                Clipboard.setData(ClipboardData(text: "${_bookmarkList[index]['ayahText']} \n ${_bookmarkList[index]['ayahTextKhmer']}"));
+                                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                  content: Text("Ayat in clipboard"),
+                                ));
+                              },
+                              child:Icon(CupertinoIcons.doc_on_doc, color: Colors.grey,)
+                          ),
+                          SizedBox(width: 15.0),
+                          GestureDetector(
+                              onTap:()=> _deleteItem(_bookmarkList[index]['ayah_id']),
+                              child:Icon(CupertinoIcons.bookmark_fill, color: Colors.grey,)
+                          )
+
+                          // IconButton(
+                          //     padding: new EdgeInsets.all(0.0),
+                          //     onPressed: ()=> _deleteItem(_bookmarkList[index]['ayah_id']), icon: Icon(
+                          //     CupertinoIcons.bookmark_fill, color: Colors.grey)
+                          // )
+                          ,
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+
+                SizedBox(height: 10.0),
+                InkWell(
+                  onTap: (){
+                    final surah = surahList[int.parse(_bookmarkList[index]['suraId']) - 1];
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => SurahPage(surah: surah,)));
+                  },
+                  child: Text('سورة '+
+                      _bookmarkList[index]['surahName'],
+                    textAlign: TextAlign.end,
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 34.0,
+                        color: Colors.teal,
+                        fontFamily: "surah_family"
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                Text(
+                  _bookmarkList[index]['ayahText'],
+                  textAlign: TextAlign.end,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 22.0,
+                      color: Colors.black,
+                      fontFamily: "osman"
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              _bookmarkList[index]['ayahTextKhmer'],
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black,
+                  fontFamily: "khmeros"
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Divider(
+              height: 10,
+              thickness: 2.0,
+            ),
+            SizedBox(height: 10.0),
+          ],
+        ),
+      ),
     );
   }
 

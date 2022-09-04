@@ -58,7 +58,7 @@ class SQLHelper {
   static Future<List<Map<String, dynamic>>> getItems() async {
     final db = await SQLHelper.db();
     print(db.query('bookmarks', orderBy: "id"));
-    return db.query('bookmarks', orderBy: "id");
+    return db.query('bookmarks', orderBy: "id DESC");
   }
 
   // Read a single item by id

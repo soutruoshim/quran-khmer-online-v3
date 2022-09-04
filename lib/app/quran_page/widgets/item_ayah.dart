@@ -79,7 +79,10 @@ class _ItemAyahState extends State<ItemAyah> {
             ),
             SizedBox(height: 10.0),
             Text(
-              widget.item.ayahText,
+              //subString(widget.item),
+              //widget.item.ayahText,
+              widget.item.verseId == "1"?subString(widget.item):widget.item.ayahText,
+
               textAlign: TextAlign.end,
               style: TextStyle(
                   fontWeight: FontWeight.w500,
@@ -149,5 +152,13 @@ class _ItemAyahState extends State<ItemAyah> {
            bookmark = true;
        });
     }
+  }
+  String subString(Ayat item){
+    String cut = "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ";
+    if(item.suraId!= "1" && item.ayahText.contains(cut)){
+      //print(item.ayahText.substring(cut.length));
+      return item.ayahText.substring(cut.length);
+    }
+    return item.ayahText;
   }
 }
