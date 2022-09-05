@@ -59,13 +59,13 @@ class _ItemAyahState extends State<ItemAyah> {
                       ),
                       SizedBox(width: 20.0),
                       GestureDetector(
-                          onTap:()=> (){
+                          onTap:(){
                             Clipboard.setData(ClipboardData(text: "${widget.item.ayahText} \n ${widget.item.ayahTextKhmer}"));
                             ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                            content: Text("Ayat in clipboard"),
+                            content: Text("Ayat copied"),
                           ));
                           },
-                          child:Icon(CupertinoIcons.doc_on_doc, color: Colors.grey,)
+                          child:Icon(Icons.copy, color: Colors.grey,)
                       ),
                       SizedBox(width: 15.0),
                       GestureDetector(
@@ -129,7 +129,7 @@ class _ItemAyahState extends State<ItemAyah> {
         widget.item.ayahNormal,
         widget.item.surahName);
     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-      content: Text('Bookmark has been added!'),
+      content: Text('Bookmark has been added.'),
     ));
     setState(() {
       bookmark = true;
@@ -141,7 +141,7 @@ class _ItemAyahState extends State<ItemAyah> {
         bookmark = false;
     });
     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-      content: Text('Bookmark has been removed!'),
+      content: Text('Bookmark has been removed.'),
     ));
   }
 

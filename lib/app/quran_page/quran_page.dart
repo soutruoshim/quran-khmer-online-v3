@@ -274,13 +274,13 @@ class _QuranPageState extends State<QuranPage> {
                           ),
                           SizedBox(width: 20.0),
                           GestureDetector(
-                              onTap:()=> (){
+                              onTap:(){
                                 Clipboard.setData(ClipboardData(text: "${_bookmarkList[index]['ayahText']} \n ${_bookmarkList[index]['ayahTextKhmer']}"));
                                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                                  content: Text("Ayat in clipboard"),
+                                  content: Text("Ayat copied"),
                                 ));
                               },
-                              child:Icon(CupertinoIcons.doc_on_doc, color: Colors.grey,)
+                              child:Icon(Icons.copy, color: Colors.grey,)
                           ),
                           SizedBox(width: 15.0),
                           GestureDetector(
@@ -405,10 +405,10 @@ class _QuranPageState extends State<QuranPage> {
                               onTap:()=> (){
                                 Clipboard.setData(ClipboardData(text: "${_bookmarkList[index]['ayahText']} \n ${_bookmarkList[index]['ayahTextKhmer']}"));
                                 ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                                  content: Text("Ayat in clipboard"),
+                                  content: Text("Ayat copied."),
                                 ));
                               },
-                              child:Icon(CupertinoIcons.doc_on_doc, color: Colors.grey,)
+                              child:Icon(Icons.copy, color: Colors.grey,)
                           ),
                           SizedBox(width: 15.0),
                           GestureDetector(
@@ -490,7 +490,7 @@ class _QuranPageState extends State<QuranPage> {
     await SQLHelper.deleteItem(id);
     _refreshBookmark();
     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-      content: Text('Bookmark has been removed!'),
+      content: Text('Bookmark has been removed.'),
     ));
   }
   Future<void> share(item) async {
